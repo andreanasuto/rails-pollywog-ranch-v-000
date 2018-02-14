@@ -5,8 +5,8 @@
   <!-- the form should post to /tadpoles/:id/metamorphose -->
   <%= form_for @frog do |f| %>
     <%= f.text_field :name, @tadpole.name %>
-    <%= f.text_field :color %>
-    <%= f.text_field :pond %>
+    <%= f.text_field :color, @tadpole.color %>
+    <%= f.text_field :pond_id, @tadpole.pond_id %>
     <%= f.submit "Become a frog" %>
   <% end %>
 
