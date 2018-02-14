@@ -4,6 +4,7 @@ class TadpolesController < ApplicationController
   def metamorphose
     @frog = Frog.new(name: @tadpole.name, color: @tadpole.color )
     @frog.pond = @tadpole.pond
+    @frog.save
     @tadpole.destroy
     redirect_to frog_path(@frog)
   end
