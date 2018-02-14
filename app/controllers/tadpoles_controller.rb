@@ -2,8 +2,9 @@ class TadpolesController < ApplicationController
   before_action :set_tadpole, only: [:show, :edit, :update, :destroy, :metamorphose]
 
   def metamorphose
-    @frog = Frog.new(name: params[:name], color: params[:color])
-    @frog.pond = Tadpole.pond
+    @frog = Frog.new(name: @tadpole.name, color: @tadpole.color )
+    @frog.pond = @tadpole.pond
+    @tadpole.destroy
     redirect_to frog_path(@frog)
   end
 
